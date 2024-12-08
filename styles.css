@@ -1,0 +1,70 @@
+body {
+  background-color: black;
+  font-family: "VT323", monospace;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px 2px #ff00ff;
+  }
+
+  20% {
+    text-shadow: 3px -2px 2px #ff00ff;
+  }
+
+  100% {
+    text-shadow: 2px 2px 2px #ff00ff;
+  }
+}
+
+@keyframes glitch-border {
+  0% {
+    border: 0.5px solid #ff00ff;
+  }
+
+  20% {
+    border: 1px solid #ff00ff;
+  }
+
+  50% {
+    border: 3px solid #ff00ff;
+  }
+
+  75% {
+    border: 2px solid #ff00ff;
+  }
+
+  100% {
+    border: 0.5px solid #ff00ff;
+  }
+}
+
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.heading {
+  color: #00ffff;
+  text-shadow: 2px 2px 2px #ff00ff;
+  animation: glitch 0.5s infinite alternate;
+}
+
+p {
+  color: #00ffff;
+  animation: glitch 0.75s infinite;
+}
+
+.box {
+  margin-top: 50px;
+  margin-left: 5px;
+  height: 50px;
+  width: 50px;
+  background-color: #00ffff;
+  animation: infinite-spinning 5s linear infinite, glitch-border 1s infinite;
+  border: 1px solid #ff00ff;
+}
